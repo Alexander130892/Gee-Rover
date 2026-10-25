@@ -1,0 +1,19 @@
+# ESP-IDF build output
+firmware/build/
+firmware/sdkconfig.old
+firmware/managed_components/
+
+# Host test build output
+firmware/test/build/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Binaries (source-only repo)
+*.bin
+*.elf
+*.map
+*.o
