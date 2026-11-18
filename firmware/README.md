@@ -26,7 +26,7 @@ Turn the rover's power switch **off** while flashing over USB.
 |---|---|---|
 | `components/motion` | GPTimer ISR, half-step table, coil writes | `motion_start(move)`, `motion_stop()`; posts `MOTION_DONE` |
 | `components/sequencer` | Program buffer (20 steps), state machine | `handle(state, event)` — pure, host-testable |
-| `components/input` | Button debouncing | posts `BTN_*` events |
+| `components/input` | Polled button debounce (no edge ISRs, see [ADR-0010](../docs/decisions/0010-pin-map.md)) | posts `BTN_*` events |
 | `components/feedback` | Buzzer (LEDC) and WS2812 eyes (RMT) | `beep(type)`, `eyes(mood)` |
 | `components/battery` | ADC1 cell voltage, low-battery threshold | `battery_is_low()` |
 | `test/` | Host unit tests for the sequencer | |

@@ -15,5 +15,6 @@ record and mark the old one `Superseded by ADR-XXXX`.
 | [0007](0007-sequencer-event-queue.md) | Single event queue, pure state machine | Accepted |
 | [0008](0008-feedback-buzzer-ws2812.md) | Passive buzzer and WS2812 eyes with drivers | Accepted |
 | [0009](0009-licensing.md) | MIT for code, CC BY-SA 4.0 for hardware and docs | Accepted |
+| [0010](0010-pin-map.md) | Pin map without GPIO 16/17 | Accepted |
 
 Template: [`template.md`](template.md).

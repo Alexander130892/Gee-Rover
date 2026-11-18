@@ -8,7 +8,7 @@ the property that actually matters.
 
 | # | Part | Qty | Unit € | Source | Notes |
 |---|---|---|---|---|---|
-| 1 | ESP32 dev board, 30-pin, ESP32-WROOM-32, USB-C | 1 | ~5 | any | Classic ESP32 needed for Bluetooth Classic + BLE (Bluepad32). The tested board has an AMS1117-3.3 regulator. |
+| 1 | ESP32 dev board, 38-pin DevKitC V4 layout (30-pin also works) | 1 | ~5 | any | Classic ESP32 (WROOM-32 or WROVER) for Bluetooth Classic + BLE (Bluepad32). Built with an AZ-Delivery 38-pin, micro-USB, WROOM-32. Pin map avoids GPIO 16/17, see [pinout.md](pinout.md). |
 | 2 | 28BYJ-48 stepper motor, **5 V** | 3 | 2.50 | [TinyTronics](https://www.tinytronics.nl/en/mechanics-and-actuators/motors/stepper-motors/28byj-48-stepper-motor-5v) | 2 + 1 spare. Must be the 5 V, 5-wire unipolar version. |
 | 3 | ULN2003 stepper driver module | 3 | 3.00 | [TinyTronics](https://www.tinytronics.nl/en/mechanics-and-actuators/motor-controllers-and-drivers/stepper-motor-controllers-and-drivers/uln2003-stepper-motor-driver-module) | 2 + 1 spare |
 | 4 | WS2812B on small PCB | 4 | 0.50 | [TinyTronics](https://www.tinytronics.nl/en/components/leds/leds/ws2812b-digital-5050-rgb-led-pcb-separate-white) | 2 eyes + spares |
@@ -16,9 +16,9 @@ the property that actually matters.
 | 6 | Passive buzzer 16 Ω, 2 kHz, with leads | 2 | 1.00 | [TinyTronics](https://www.tinytronics.nl/en/audio/speakers/buzzers/passive-buzzer-3-12v-ac-2khz-dupont-jumper) | Passive = melodies possible. Needs the transistor driver. |
 | 7 | SS8050 NPN transistor | 3 | 0.20 | [TinyTronics](https://www.tinytronics.nl/en/components/transistors/npn-transistor-ss8050) | Buzzer driver. Check pinout (usually E-B-C). |
 | 8 | 1N4148 diode | 3 | 0.10 | [TinyTronics](https://www.tinytronics.nl/nl/componenten/diodes/diode-high-speed-1n4148) | Buzzer flyback diode |
-| 9 | Resistor set 10 Ω–1 MΩ, 1/4 W | 1 | 5.00 | [TinyTronics](https://www.tinytronics.nl/en/components/resistors/resistors/10%CF%89-1m%CF%89-resistor-set) | Uses: 22 Ω, 470 Ω (×2), 100 kΩ (×2) |
+| 9 | Resistor set 10 Ω–1 MΩ, 1/4 W | 1 | 5.00 | [TinyTronics](https://www.tinytronics.nl/en/components/resistors/resistors/10%CF%89-1m%CF%89-resistor-set) | Uses: 22 Ω, 470 Ω (×2), 10 kΩ (×3, button pull-ups), 100 kΩ (×2) |
 | 10 | 1000 µF 25 V electrolytic | 3 | 0.25 | [TinyTronics](https://www.tinytronics.nl/en/components/capacitors/aishi-elektrolytic-capacitor-1000uf-25v) | Bulk capacitor on the 5 V rail |
-| 11 | 100 nF ceramic capacitor | 5 | — | any | Decoupling (74AHCT125) and ADC filter |
+| 11 | 100 nF ceramic capacitor | 5 | — | any | Decoupling (74AHCT125), ADC filter, GPIO 36 button filter |
 | 12 | Tactile switch set with keycaps (4 arrows + OK), 12×12 mm | 1 | 3.00 | [TinyTronics](https://www.tinytronics.nl/en/switches/manual-switches/pcb-switches/tactile-pushbutton-switch-set-with-keycaps-5x-black) | ↑ ↓ ← → and GO |
 | 13 | Tactile switch 12×12×7.3 mm | 2 | 0.25 | [TinyTronics](https://www.tinytronics.nl/shop/nl/componenten/schakelaars/tactile-pushbutton-switch-momentary-4pin-12*12*7.3mm) | CLEAR + spare |
 | 14 | Button cap 12×12, red | 1 | 0.15 | [TinyTronics](https://www.tinytronics.nl/en/components/knobs,-caps-and-covers/button-cap-for-tactile-pushbutton-switch-momentary-12x12x7.3mm-red) | CLEAR |

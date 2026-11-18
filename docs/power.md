@@ -8,7 +8,7 @@ Decision record: [ADR-0003](decisions/0003-power-li-ion-usb-recharge.md).
 micro-USB ─► TP4056 + DW01 ──B+/B−── 18650 Li-ion (protected)
                │
               OUT+ ─► rocker switch ─┬─► 5 V / 2 A boost ─► 5 V rail
-                                     │                       ├─► ESP32 5V pin (→ AMS1117 → 3.3 V)
+                                     │                       ├─► ESP32 V5 pin (→ AMS1117 → 3.3 V)
                                      │                       ├─► 2× ULN2003 + 28BYJ-48
                                      │                       ├─► 74AHCT125 + WS2812 eyes
                                      │                       └─► buzzer driver
@@ -47,8 +47,8 @@ Motors are de-energised when idle.
 ## Battery monitoring
 
 Divider of 100 kΩ / 100 kΩ: 4.2 V full → 2.1 V at the ADC, inside the linear range.
-Add 100 nF from the ADC pin to GND. Use an **ADC1** pin: ADC2 is shared with the Wi-Fi
-driver.
+Add 100 nF from the ADC pin to GND. The divider goes to **GPIO 39** (ADC1 channel 3);
+ADC2 is shared with the Wi-Fi driver.
 
 ## Charging
 

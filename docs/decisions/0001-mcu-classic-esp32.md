@@ -21,6 +21,10 @@ supports Bluetooth Classic pads (DualShock 4, Switch Pro, ...) as well as BLE pa
 
 Classic ESP32 on a 30-pin dev board (ESP32-WROOM-32, USB-C, AMS1117-3.3 regulator).
 
+> **Note 2026-11-18:** the board actually used is a 38-pin ESP32-DevKitC V4 layout
+> (AZ-Delivery, micro-USB, ESP32-WROOM-32). The decision is unchanged; the pin map
+> ([ADR-0010](0010-pin-map.md)) works on both layouts and on WROVER modules.
+
 ## Consequences
 
 - The pin map must avoid flash pins 6–11 and strapping pins for buttons
