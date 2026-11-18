@@ -32,6 +32,7 @@ across a printed planet mat.
 | [`docs/power.md`](docs/power.md) | Battery, charging, power budget and safety |
 | [`docs/pinout.md`](docs/pinout.md) | ESP32 pin map and constraints |
 | [`docs/sequencer.md`](docs/sequencer.md) | Button behaviour and firmware state machine |
+| [`docs/test-plan.md`](docs/test-plan.md) | Bring-up tests with pass criteria and results |
 | [`docs/decisions/`](docs/decisions/) | Architecture Decision Records (why things are the way they are) |
 | [`firmware/`](firmware/) | ESP-IDF project |
 | [`hardware/`](hardware/) | Fusion 360 source, STEP, STL files and planet mat artwork |

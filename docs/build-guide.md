@@ -15,12 +15,9 @@ Work in progress: steps are filled in as the first unit is built.
 
 ## 2. Electronics on the bench
 
-1. Power chain first: cell → TP4056 → switch → boost. Verify 5.0 V at the boost output
-   under a dummy load **before** connecting anything else.
-2. ESP32 on its socket, powered from the 5 V rail.
-3. One motor + ULN2003. Flash the motor test and check the step period with the logic
-   analyzer.
-4. Second motor, buttons, buzzer, eyes.
+Follow the [test plan](test-plan.md) in order: power chain (T01–T04), controller and
+peripherals (T05–T09), then motion (T10–T14). Each block is tested before the next
+one is connected.
 
 <!-- TODO: schematic in docs/wiring/, photos per step -->
 

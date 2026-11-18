@@ -6,6 +6,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 - Pin map for the 38-pin DevKitC board, avoiding GPIO 16/17 (ADR-0010)
+- Bring-up and test plan T01–T17 with pass criteria
 
 ### Changed
 - Board in BoM and ADR-0001 note: 38-pin AZ-Delivery DevKitC, micro-USB
