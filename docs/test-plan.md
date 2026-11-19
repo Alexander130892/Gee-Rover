@@ -48,7 +48,12 @@ Record the charge time.
 2. TP4056 OUT+ → rocker switch → boost IN+; OUT− → boost IN−. Nothing on the output.
 3. Switch on; measure the output.
 
-**Pass:** **5.0 ± 0.1 V**; switch off → output drops to 0 V.
+**Pass:** **4.90–5.25 V** (USB VBUS limit; every load on the rail is rated for it); switch off → output
+drops to 0 V.
+
+**If OUT± reads well below B±** (e.g. 2.6 V with the cell at 4.1 V): the DW01 protection
+has switched OUT− off, after a short or an over-current. Remove the cause, then plug in
+the micro-USB charger for a few seconds to reset it.
 
 ### T03 — Boost under motor load
 

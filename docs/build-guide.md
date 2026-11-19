@@ -15,6 +15,10 @@ Work in progress: steps are filled in as the first unit is built.
 
 ## 2. Electronics on the bench
 
+**Tin every stranded wire end** (or use ferrules) before it goes into a screw terminal or
+onto a pad. A single loose strand that shorts the battery output trips the DW01
+protection and the rover appears dead until the charger is plugged in.
+
 Follow the [test plan](test-plan.md) in order: power chain (T01–T04), controller and
 peripherals (T05–T09), then motion (T10–T14). Each block is tested before the next
 one is connected.
