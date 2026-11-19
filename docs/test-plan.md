@@ -11,7 +11,7 @@ Instruments: multimeter, logic analyzer. No bench supply or oscilloscope assumed
 
 | ID | Test | Depends on | Date | Measured | Result |
 |---|---|---|---|---|---|
-| T01 | Cell and charger | — | | | |
+| T01 | Cell and charger | — | 2026-11-19 | 3.64 V as delivered → 4.16 V after ~4 h, LED turned blue | **Pass** |
 | T02 | Boost, no load | T01 | | | |
 | T03 | Boost under motor load | T02 | | | |
 | T04 | Battery divider | T01 | | | |
