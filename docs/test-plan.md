@@ -12,7 +12,7 @@ Instruments: multimeter, logic analyzer. No bench supply or oscilloscope assumed
 | ID | Test | Depends on | Date | Measured | Result |
 |---|---|---|---|---|---|
 | T01 | Cell and charger | — | 2026-11-19 | 3.64 V as delivered → 4.16 V after ~4 h, LED turned blue | **Pass** |
-| T02 | Boost, no load | T01 | | | |
+| T02 | Boost, no load | T01 | 2026-11-19 | 5.16 V on, 0 V off. First attempt: OUT± 2.6 V (DW01 trip, likely a loose strand), reset after rewiring | **Pass** |
 | T03 | Boost under motor load | T02 | | | |
 | T04 | Battery divider | T01 | | | |
 | T05 | ESP32 on the 5 V rail | T03 | | | |
