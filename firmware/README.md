@@ -6,15 +6,16 @@ ESP-IDF project in C (BARR-C style, fixed-width types). Architecture decisions:
 
 ## Status
 
-Skeleton only. Not yet built against a pinned ESP-IDF version.
+Bring-up stage T05: coils forced off, reset reason and a 1 Hz heartbeat on the log.
+Pin numbers live in `components/board/include/board_pins.h` (must match
+[pinout.md](../docs/pinout.md)).
 
 ## Build and flash
 
 ```sh
-. $IDF_PATH/export.sh          # ESP-IDF v5.x — pin the exact version once chosen
+. $IDF_PATH/export.sh          # ESP-IDF v5.3.2
 cd firmware
-idf.py set-target esp32
-idf.py build
+idf.py build                   # target esp32 comes from sdkconfig.defaults
 idf.py -p <port> flash monitor
 ```
 

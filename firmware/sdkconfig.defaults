@@ -1,0 +1,3 @@
+CONFIG_IDF_TARGET="esp32"
+# Brownout detector on (default): needed to see ESP_RST_BROWNOUT in T05/T12
+CONFIG_ESP_BROWNOUT_DET=y
