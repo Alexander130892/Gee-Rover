@@ -6,6 +6,9 @@ measured value, not just "OK". Firmware logic is tested separately on the host
 (`firmware/test/`).
 
 Instruments: multimeter, logic analyzer. No bench supply or oscilloscope assumed.
+Cheap multimeters can have only ~1 MΩ input impedance: trust them on low-impedance
+points (cell, rail, GPIO outputs), not on high-impedance nodes such as the battery
+divider.
 
 ## Results
 
@@ -14,7 +17,7 @@ Instruments: multimeter, logic analyzer. No bench supply or oscilloscope assumed
 | T01 | Cell and charger | — | 2026-11-19 | 3.64 V as delivered → 4.16 V after ~4 h, LED turned blue | **Pass** |
 | T02 | Boost, no load | T01 | 2026-11-19 | 5.16 V on, 0 V off. First attempt: OUT± 2.6 V (DW01 trip, likely a loose strand), reset after rewiring | **Pass** |
 | T03 | Boost under motor load | T02 | 2026-11-19 | 4.96 V, both motors holding 2 coils (~0.4 A est.); after 2 min only the motors slightly warm | **Pass** |
-| T04 | Battery divider | T01 | | | |
+| T04 | Battery divider | T01 | 2026-11-20 | Halves 1.80 V / 1.80 V at 3.81 V (meter ~1 MΩ loads each half); 0 V switched off | **Pass** |
 | T05 | ESP32 on the 5 V rail | T03 | | | |
 | T06 | Battery ADC accuracy | T04, T05 | | | |
 | T07 | Buttons | T05 | | | |
@@ -70,10 +73,16 @@ only warm after 2 minutes.
 ### T04 — Battery divider
 
 1. Build the 100 kΩ / 100 kΩ divider with 100 nF, fed from TP4056 OUT+ after the switch.
-2. Measure the cell and the divider midpoint.
+2. With the switch on, measure the voltage across the **top** resistor and across the
+   **bottom** resistor.
+3. Switch off; measure the midpoint.
 
-**Pass:** midpoint = cell / 2 **± 2 %**. With the switch off, the midpoint reads 0 V
-(the divider does not drain the cell while the rover is off).
+**Pass:** top and bottom readings equal within **± 2 %**; midpoint **0 V** with the switch off.
+
+Why not "midpoint = cell / 2": a meter with 1 MΩ input impedance in parallel with
+100 kΩ pulls the half it measures down by ~5 %, so the two halves add up to less than the
+total. Comparing the halves cancels that error. Absolute accuracy is checked in T06 with
+the ESP32 ADC against the meter at the cell (a low-impedance point).
 
 ## Controller
 

@@ -15,8 +15,10 @@ micro-USB ─► TP4056 + DW01 ──B+/B−── 18650 Li-ion (protected)
                                      └─► 100 k / 100 k divider ─► ESP32 ADC1 (cell voltage)
 ```
 
-- The **switch sits after the charger output**: the cell charges with the rover off,
-  and the divider does not drain the cell while it is off.
+- The **switch sits after the charger output**: the cell charges with the rover off.
+- The **divider is fed after the switch**, so it is dead whenever the ESP32 is
+  unpowered. Fed before the switch it would back-power the ESP32 through GPIO 39's
+  protection diodes. (Its drain, ~21 µA, would be negligible either way.)
 - The **boost converter** holds the rail at a stable 5 V for the whole discharge. That
   keeps motor torque consistent and keeps the ESP32's AMS1117 out of dropout.
 - **1000 µF on the 5 V rail**, close to the ESP32, absorbs stepper switching transients.
