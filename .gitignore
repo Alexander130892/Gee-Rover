@@ -18,3 +18,6 @@ firmware/test/build/
 *.elf
 *.map
 *.o
+
+# idf.py monitor logs (Ctrl+T, Ctrl+L)
+log.*.txt
